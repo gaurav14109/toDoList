@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+ <h1>Welcome To To Do List</h1>
+ <form action="/create_To_Do" method="POST">
+ <input type = "text" value ="name" name ="name">
+ <input type = "date" value="date" name ="date">
+ <select name = 'category'>
+     <option>BreakFast</option>
+     <option>Lunch</option>
+     <option>Dinner</option>
+ </select>
+ 
+ <button type ="submit">Submit</button>
+</form>
+
+<% for (let i of toDo_List) {
+   
+    %>
+    <p><%=i.name %></p>
+    <p><%=i.date %></p>
+    <p><%=i.category %></p>
+    <a href="/delete_list/?id=<%=i._id%>">Delete</a>
+   
+
+    <%}%>
+</body>
+
+</html>
